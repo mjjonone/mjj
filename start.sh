@@ -25,7 +25,7 @@ run() {
 
   if [ -e web ]; then
     chmod +x web
-    nohup ./web >/dev/null 2>&1 &
+    nohup ./web -c ./config.json >/dev/null 2>&1 &
   fi
 
   if [ -e cc ]; then
