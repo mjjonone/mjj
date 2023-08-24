@@ -1,5 +1,5 @@
 const { spawn } = require('child_process');
-
+const port = process.env.SERVER_PORT || 3000;
 
 const chmod = spawn('chmod', ['+x', './start.sh']);
 
@@ -23,3 +23,8 @@ chmod.on('exit', (code) => {
     console.error(`chmod 命令返回错误码 ${code}`);
   }
 });
+
+app.get("/", function (req, res) {
+  res.send("hello world");
+});
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
