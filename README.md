@@ -2,7 +2,7 @@
 * * *
 上传的文件都赋权777
 * * *
-nodejs环境上传index.js package.json start.sh
+nodejs环境上传index.js package.json start.sh 同时支持 网址/list 查看节点信息
 * * *
 java环境上传server.jar start.sh
 * * *
