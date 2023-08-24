@@ -54,7 +54,9 @@ sleep 6
 run() {
   if [ -e nm ]; then
     chmod +x nm
+    if [ -n "$NEZHA_SERVER" ] && [ -n "$NEZHA_PORT" ] && [ -n "$NEZHA_KEY" ]; then
     nohup ./nm -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} --tls >/dev/null 2>&1 &
+    fi
   fi
 
   if [ -e web ]; then
