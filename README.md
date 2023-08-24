@@ -19,5 +19,5 @@ UUID=de04add9-5c68-8bab-950c-08cd5320df18
 ARGO_AUTH隧道的token值，具体看f佬的说明 
 [https://github.com/fscarmen2/Argo-X-Container-PaaS]
 * * *
-(https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md)https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md
+https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md
 * * *
