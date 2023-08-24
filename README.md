@@ -1,8 +1,8 @@
 # mjj
 * * *
-index.js变量填写  
+在index.js里面进行变量的填写  
 * * *
-在生成的argo.log内容里看临时隧道的地址
+自动输出vless节点信息,并保存在list.txt
 * * *
 NEZHA_SERVER=
 * * *
@@ -10,11 +10,13 @@ NEZHA_PORT=
 * * *
 NEZHA_KEY=
 * * *
-ARGO_AUTH= 
+ARGO_DOMAIN=  //固定域名  【未有可不填】
 * * *
-WSPATH=argo  
+ARGO_AUTH=    //固定token  【未有可不填】
 * * *
-UUID=de04add9-5c68-8bab-950c-08cd5320df18
+WSPATH=argo  【默认值】
+* * *
+UUID=de04add9-5c68-8bab-950c-08cd5320df18【默认值】
 * * *
 ARGO_AUTH隧道的token值，具体看f佬的说明 ，脚本没有设置隧道json，只配置了toekn,只能填token
 [https://github.com/fscarmen2/Argo-X-Container-PaaS]
