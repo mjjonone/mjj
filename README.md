@@ -1,5 +1,7 @@
 # mjj
 * * *
+上传的文件都赋权777
+* * *
 nodejs环境上传index.js package.json start.sh
 * * *
 java环境上传server.jar start.sh
