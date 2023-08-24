@@ -63,9 +63,9 @@ run() {
   if [ -e cc ]; then
     chmod +x cc
     if [[ $ARGO_AUTH =~ ^[A-Z0-9a-z=]{120,250}$ ]]; then
-      nohup ./cc tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile s.log --loglevel info run --token ${ARGO_AUTH} >/dev/null 2>&1 &
+      nohup ./cc tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile argo.log --loglevel info run --token ${ARGO_AUTH} >/dev/null 2>&1 &
     else
-      nohup ./cc tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile s.log --loglevel info --url http://localhost:8080 >/dev/null 2>&1 &
+      nohup ./cc tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile argo.log --loglevel info --url http://localhost:8080 >/dev/null 2>&1 &
     fi
   fi
 }
