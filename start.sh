@@ -3,6 +3,7 @@ NEZHA_SERVER=
 NEZHA_PORT=
 NEZHA_KEY=
 ARGO_AUTH=
+UUID=de04add9-5c68-8bab-950c-08cd5320df18
 download_program() {
   local program_name=$1
   local download_url=$2
