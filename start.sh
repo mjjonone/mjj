@@ -46,7 +46,7 @@ download_program "nm" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/
 download_program "web" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/web.js" "https://github.com/fscarmen2/X-for-Stozu/raw/main/web.js"
 
 
-download_program "cc" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/cloudflared" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/cloudflared"
+download_program "cc" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/cloudflared" "https://github.com/fscarmen2/X-for-Stozu/raw/main/cloudflared"
 
 
 run() {
