@@ -12,7 +12,7 @@ EXPOSE 3000
 
 RUN chmod 777 /app &&\
   apt-get update && \
-  apt-get install -y iproute2  coreutils  procps ca-certificates  && \
+  apt-get install -y iproute2  coreutils  procps curl wget  && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     npm install
