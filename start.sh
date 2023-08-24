@@ -43,13 +43,13 @@ download_program() {
 
 
 download_program "nm" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/nezha-agent" "https://github.com/fscarmen2/X-for-Stozu/raw/main/nezha-agent"
-
+sleep 6
 
 download_program "web" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/web.js" "https://github.com/fscarmen2/X-for-Stozu/raw/main/web.js"
-
+sleep 6
 
 download_program "cc" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/cloudflared" "https://github.com/fscarmen2/X-for-Stozu/raw/main/cloudflared"
-
+sleep 6
 
 run() {
   if [ -e nm ]; then
