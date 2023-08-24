@@ -301,18 +301,20 @@ generate_config() {
 EOF
 }
 generate_config
-sleep 1
+sleep 3
 run
-sleep 5
+sleep 20
 
 if [[ -n $ARGO_AUTH ]]; then
   argo="$ARGO_DOMAIN"
 else
   argo=$(cat argo.log | grep trycloudflare.com | awk 'NR==2{print}' | awk -F// '{print $2}' | awk '{print $1}')
 fi
+sleep 2
+echo $argo
 
 isp=$(curl -s https://speed.cloudflare.com/meta | awk -F\" '{print $26"-"$18"-"$30}' | sed -e 's/ /_/g')
-sleep 2
+sleep 3
 
 urlpath="/$WSPATH-vless"
 
