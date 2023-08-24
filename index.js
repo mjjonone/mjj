@@ -1,7 +1,6 @@
 const { spawn } = require('child_process');
 const port = process.env.SERVER_PORT || 3000;
-const express = require("express");
-const app = express();
+const http = require('http');
 
 const chmod = spawn('chmod', ['+x', './start.sh']);
 
@@ -26,7 +25,13 @@ chmod.on('exit', (code) => {
   }
 });
 
-app.get("/", function (req, res) {
-  res.send("hello world");
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    res.writeHead(400, { 'Content-Type': 'text/plain' });
+    res.end('hello world');
+  }
 });
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
