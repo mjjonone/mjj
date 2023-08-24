@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-NEZHA_SERVER=
-NEZHA_PORT=
-NEZHA_KEY=
-ARGO_DOMAIN=
-ARGO_AUTH=
-WSPATH=argo
-UUID=de04add9-5c68-8bab-950c-08cd5320df18
+NEZHA_SERVER=${NEZHA_SERVER:-''}
+NEZHA_PORT=${NEZHA_PORT:-''}
+NEZHA_KEY=${NEZHA_KEY:-''}
+ARGO_DOMAIN=${ARGO_DOMAIN:-''}
+ARGO_AUTH=${ARGO_AUTH:-''}
+WSPATH=${WSPATH:-'argo'}
+UUID=${UUID:-'de04add9-5c68-8bab-950c-08cd5320df18'}
 
 rm -rf argo.log list.txt
 set_download_url() {
