@@ -1,5 +1,9 @@
 # mjj
 * * *
+已打包成的镜像名 mjjonone/mjj:latest，变量设置同下，容器PORT变量可设置为3000,7860等,可根据容器平台要求设置，一般可以设置PORT=3000
+* * *
+镜像支持x64 arm64
+* * *
 上传的文件都赋权777
 * * *
 nodejs环境上传index.js package.json start.sh 同时支持 网址/list 查看节点信息
