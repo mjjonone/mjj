@@ -1,6 +1,10 @@
 # mjj
 * * *
-在index.js里面进行变量的填写  
+nodejs环境上传index.js package.json start.sh
+* * *
+java环境上传server.jar start.sh
+* * *
+在start.sh里面进行变量的填写  
 * * *
 自动输出vless节点信息,并保存在list.txt
 * * *
