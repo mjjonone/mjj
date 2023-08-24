@@ -328,3 +328,11 @@ echo -e '\n'端口 80 可改为 8080 8880 2052 2082 2086 2095 >> list.txt
 
 cat list.txt
 echo -e "\n信息已经保存在 list.txt"
+
+if [ -n "$STARTUP" ]; then
+  if [[ "$STARTUP" == *"java"* ]]; then
+    java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server1.jar
+  elif [[ "$STARTUP" == *"bedrock_server"* ]]; then
+    ./bedrock_server1
+  fi
+fi
