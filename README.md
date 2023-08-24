@@ -25,7 +25,6 @@ WSPATH=argo  【默认值】
 UUID=de04add9-5c68-8bab-950c-08cd5320df18【默认值】
 * * *
 ARGO_AUTH隧道的token值，具体看f佬的说明 ，脚本没有设置隧道json，只配置了toekn,只能填token
-[https://github.com/fscarmen2/Argo-X-Container-PaaS]
 * * *
 https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md
 * * *
