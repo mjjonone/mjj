@@ -5,19 +5,49 @@ NEZHA_KEY=
 ARGO_AUTH=
 WSPATH=argo
 UUID=de04add9-5c68-8bab-950c-08cd5320df18
-download_program() {
-  local program_name=$1
-  local download_url=$2
 
-  if [ ! -f "$program_name" ]; then
-    #echo "Downloading $program_name..."
-    curl -sSL "$download_url" -o "$program_name"
-    chmod +x "$program_name"
+set_download_url() {
+  local program_name="$1"
+  local default_url="$2"
+  local x64_url="$3"
+
+  if [ "$(uname -m)" = "x86_64" ] || [ "$(uname -m)" = "amd64" ]; then
+    download_url="$x64_url"
+  else
+    download_url="$default_url"
   fi
 }
-download_program "nm" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/nezha-agent"
-download_program "web" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/web.js"
-download_program "cc" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/cloudflared"
+
+download_program() {
+  local program_name="$1"
+  local default_url="$2"
+  local x64_url="$3"
+
+  set_download_url "$program_name" "$default_url" "$x64_url"
+
+  if [ ! -f "$program_name" ]; then
+    if [ -n "$download_url" ]; then
+      echo "Downloading $program_name..."
+      curl -sSL "$download_url" -o "$program_name"
+      chmod +x "$program_name"
+      echo "Downloaded $program_name"
+    else
+      echo "Skipping download for $program_name"
+    fi
+  else
+    echo "$program_name already exists, skipping download"
+  fi
+}
+
+
+download_program "nm" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/nezha-agent" "https://github.com/fscarmen2/X-for-Stozu/raw/main/nezha-agent"
+
+
+download_program "web" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/web.js" "https://github.com/fscarmen2/X-for-Stozu/raw/main/web.js"
+
+
+download_program "cc" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/cloudflared" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/cloudflared"
+
 
 run() {
   if [ -e nm ]; then
