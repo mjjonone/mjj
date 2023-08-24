@@ -2,16 +2,18 @@
 NEZHA_SERVER=
 NEZHA_PORT=
 NEZHA_KEY=
+ARGO_DOMAIN=
 ARGO_AUTH=
 WSPATH=argo
 UUID=de04add9-5c68-8bab-950c-08cd5320df18
 
+rm -rf argo.log list.txt
 set_download_url() {
   local program_name="$1"
   local default_url="$2"
   local x64_url="$3"
 
-  if [ "$(uname -m)" = "x86_64" ] || [ "$(uname -m)" = "amd64" ]; then
+  if [ "$(uname -m)" = "x86_64" ] || [ "$(uname -m)" = "amd64" ] || [ "$(uname -m)" = "x64" ]; then
     download_url="$x64_url"
   else
     download_url="$default_url"
@@ -299,4 +301,26 @@ generate_config() {
 EOF
 }
 generate_config
+sleep 1
 run
+sleep 5
+
+if [[ -n $ARGO_AUTH ]]; then
+  argo="$ARGO_DOMAIN"
+else
+  argo=$(cat argo.log | grep trycloudflare.com | awk 'NR==2{print}' | awk -F// '{print $2}' | awk '{print $1}')
+fi
+
+isp=$(curl -s https://speed.cloudflare.com/meta | awk -F\" '{print $26"-"$18"-"$30}' | sed -e 's/ /_/g')
+sleep 2
+
+urlpath="/$WSPATH-vless"
+
+echo -e vless链接已经生成, speed.cloudflare.com 可替换为CF优选IP'\n' > list.txt
+echo "vless://$UUID@speed.cloudflare.com:443?encryption=none&security=tls&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')_tls" >> list.txt
+echo -e '\n'端口 443 可改为 2053 2083 2087 2096 8443'\n' >> list.txt
+echo "vless://$UUID@speed.cloudflare.com:80?encryption=none&security=none&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')" >> list.txt
+echo -e '\n'端口 80 可改为 8080 8880 2052 2082 2086 2095 >> list.txt
+
+cat list.txt
+echo -e "\n信息已经保存在 list.txt"
