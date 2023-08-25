@@ -7,7 +7,7 @@ ARGO_AUTH=${ARGO_AUTH:-''}
 WSPATH=${WSPATH:-'argo'}
 UUID=${UUID:-'de04add9-5c68-8bab-950c-08cd5320df18'}
 
-rm -rf argo.log list.txt
+rm -rf argo.log list.txt sub.txt
 set_download_url() {
   local program_name="$1"
   local default_url="$2"
@@ -320,10 +320,10 @@ sleep 3
 
 urlpath="/$WSPATH-vless"
 
-echo -e vless链接已经生成, speed.cloudflare.com 可替换为CF优选IP'\n' > list.txt
-echo "vless://$UUID@speed.cloudflare.com:443?encryption=none&security=tls&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')_tls" >> list.txt
+echo -e vless链接已经生成, speed.cloudflare.com 可替换为CF优选IP'\n' > list.txt 
+echo "vless://$UUID@speed.cloudflare.com:443?encryption=none&security=tls&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')_tls" | tee -a list.txt sub.txt
 echo -e '\n'端口 443 可改为 2053 2083 2087 2096 8443'\n' >> list.txt
-echo "vless://$UUID@speed.cloudflare.com:80?encryption=none&security=none&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')" >> list.txt
+echo "vless://$UUID@speed.cloudflare.com:80?encryption=none&security=none&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')" | tee -a list.txt 
 echo -e '\n'端口 80 可改为 8080 8880 2052 2082 2086 2095 >> list.txt
 
 cat list.txt
