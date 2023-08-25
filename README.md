@@ -30,13 +30,13 @@ NEZHA_KEY=      //nezha密匙
 * * *
 ARGO_DOMAIN=  //隧道固定域名  【未有可不填】
 * * *
-ARGO_AUTH=    //隧道固定token  【未有可不填】
+ARGO_AUTH=    //隧道的token或者json  【未有可不填】
 * * *
 WSPATH=argo  【默认值】
 * * *
 UUID=de04add9-5c68-8bab-950c-08cd5320df18【默认值】
 * * *
-ARGO_AUTH隧道的token值，具体请看f佬的说明 ，脚本没有设置隧道json，只配置了toekn,只能填token值
+ARGO_AUTH隧道的值，具体请看f佬的说明 
 * * *
 说明链接：https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md
 * * *
