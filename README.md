@@ -8,6 +8,21 @@
 * * *
 上传的文件都赋权777 ！！！
 * * *
+一些游戏托管平台：https://github.com/Myuui/Free-Minecraft-Hosts.git
+* * *
+#
+docker以及类似平台
+https://app.patr.cloud/deployment
+https://huggingface.co/
+https://www.render.com
+https://www.back4app.com/
+https://codesandbox.io/
+https://glitch.com/
+https://replit.com/
+https://www.render.com/
+https://fly.io/
+#
+* * *
 nodejs环境上传index.js package.json start.sh 同时支持 网址/list 查看节点信息 /sub节点订阅地址
 * * *
 Minecraft相关的服务器 1.Vanilla Bedrock||Minecraft Bedrock 启动文件是bedrock_server
