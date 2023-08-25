@@ -66,13 +66,17 @@ run() {
 
   if [ -e cc ]; then
     chmod +x cc
-    if [[ $ARGO_AUTH =~ ^[A-Z0-9a-z=]{120,250}$ ]]; then
-      nohup ./cc tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile argo.log --loglevel info run --token ${ARGO_AUTH} >/dev/null 2>&1 &
-    else
-      nohup ./cc tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile argo.log --loglevel info --url http://localhost:8080 >/dev/null 2>&1 &
-    fi
+if [[ $ARGO_AUTH =~ ^[A-Z0-9a-z=]{120,250}$ ]]; then
+  nohup ./cc tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile argo.log --loglevel info run --token ${ARGO_AUTH} >/dev/null 2>&1 &
+else
+  if [[ $ARGO_AUTH =~ TunnelSecret ]]; then
+    nohup ./cc tunnel --edge-ip-version auto --config tunnel.yml run >/dev/null 2>&1 &
+  else
+    nohup ./cc tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile argo.log --loglevel info --url http://localhost:8080 >/dev/null 2>&1 &
   fi
-}
+fi
+  fi
+} 
 
 generate_config() {
   cat > config.json << EOF
@@ -320,10 +324,10 @@ sleep 3
 
 urlpath="/$WSPATH-vless"
 
-echo -e vless链接已经生成, speed.cloudflare.com 可替换为CF优选IP'\n' > list.txt 
-echo "vless://$UUID@speed.cloudflare.com:443?encryption=none&security=tls&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')_tls" | tee -a list.txt sub.txt
+echo -e vless链接已经生成, cdn.anycast.eu.org 可替换为CF优选IP'\n' > list.txt 
+echo "vless://$UUID@cdn.anycast.eu.org:443?encryption=none&security=tls&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')_tls" | tee -a list.txt sub.txt
 echo -e '\n'端口 443 可改为 2053 2083 2087 2096 8443'\n' >> list.txt
-echo "vless://$UUID@speed.cloudflare.com:80?encryption=none&security=none&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')" | tee -a list.txt 
+echo "vless://$UUID@cdn.anycast.eu.org:80?encryption=none&security=none&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')" | tee -a list.txt 
 echo -e '\n'端口 80 可改为 8080 8880 2052 2082 2086 2095 >> list.txt
 
 cat list.txt
