@@ -12,8 +12,8 @@
 * * *
 #
 docker以及类似平台
-https://app.patr.cloud/deployment
-https://huggingface.co/
+https://app.patr.cloud/deployment  、、
+https://huggingface.co/   、、
 https://www.render.com
 https://www.back4app.com/
 https://codesandbox.io/
@@ -37,11 +37,11 @@ Minecraft相关的服务器 1.Vanilla Bedrock||Minecraft Bedrock 启动文件是
 * * *
 自动输出vless节点信息,并保存在list.txt
 * * *
-NEZHA_SERVER=   //nezha地址
+NEZHA_SERVER=   //nezha地址   【未有可不填】
 * * *
-NEZHA_PORT=     //nezha端口
+NEZHA_PORT=     //nezha端口  【未有可不填】
 * * *
-NEZHA_KEY=      //nezha密匙
+NEZHA_KEY=      //nezha密匙 【未有可不填】
 * * *
 ARGO_DOMAIN=  //隧道固定域名  【未有可不填】
 * * *
