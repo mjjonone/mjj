@@ -51,6 +51,32 @@ sleep 6
 download_program "cc" "https://github.com/fscarmen2/X-for-Botshard-ARM/raw/main/cloudflared" "https://github.com/fscarmen2/X-for-Stozu/raw/main/cloudflared"
 sleep 6
 
+argo_type() {
+  if [[ -z $ARGO_AUTH || -z $ARGO_DOMAIN ]]; then
+    echo "ARGO_AUTH 或 ARGO_DOMAIN 为空,使用Quick Tunnels"
+    return
+  fi
+
+  if [[ $ARGO_AUTH =~ TunnelSecret ]]; then
+    echo $ARGO_AUTH > tunnel.json
+    cat > tunnel.yml << EOF
+tunnel: $(cut -d\" -f12 <<< $ARGO_AUTH)
+credentials-file: ./tunnel.json
+protocol: http2
+
+ingress:
+  - hostname: $ARGO_DOMAIN
+    service: http://localhost:8080
+    originRequest:
+      noTLSVerify: true
+  - service: http_status:404
+EOF
+  else
+    echo "ARGO_AUTH 不匹配 TunnelSecret"
+  fi
+}
+
+
 run() {
   if [ -e nm ]; then
     chmod +x nm
@@ -308,6 +334,8 @@ EOF
 }
 generate_config
 sleep 3
+argo_type
+sleep 3
 run
 sleep 20
 
@@ -324,10 +352,10 @@ sleep 3
 
 urlpath="/$WSPATH-vless"
 
-echo -e vless链接已经生成, cdn.anycast.eu.org 可替换为CF优选IP'\n' > list.txt 
-echo "vless://$UUID@cdn.anycast.eu.org:443?encryption=none&security=tls&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')_tls" | tee -a list.txt sub.txt
+echo -e vless链接已经生成, www.speedtest.net 可替换为CF优选IP'\n' > list.txt 
+echo "vless://$UUID@www.speedtest.net:443?encryption=none&security=tls&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')_tls" | tee -a list.txt sub.txt
 echo -e '\n'端口 443 可改为 2053 2083 2087 2096 8443'\n' >> list.txt
-echo "vless://$UUID@cdn.anycast.eu.org:80?encryption=none&security=none&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')" | tee -a list.txt 
+echo "vless://$UUID@www.speedtest.net:80?encryption=none&security=none&type=ws&host=$argo&path=$urlpath#$(echo $isp | sed -e 's/_/%20/g' -e 's/,/%2C/g')" | tee -a list.txt 
 echo -e '\n'端口 80 可改为 8080 8880 2052 2082 2086 2095 >> list.txt
 
 cat list.txt
