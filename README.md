@@ -4,7 +4,7 @@
 * * *
 镜像支持x64 arm64,支持项目网址/list 查看节点信息 /sub节点订阅地址
 * * *
-上传的文件都赋权777
+上传的文件都赋权777 ！！！
 * * *
 nodejs环境上传index.js package.json start.sh 同时支持 网址/list 查看节点信息 /sub节点订阅地址
 * * *
@@ -20,21 +20,21 @@ Minecraft相关的服务器 1.Vanilla Bedrock||Minecraft Bedrock 启动文件是
 * * *
 自动输出vless节点信息,并保存在list.txt
 * * *
-NEZHA_SERVER=
+NEZHA_SERVER=   //nezha地址
 * * *
-NEZHA_PORT=
+NEZHA_PORT=     //nezha端口
 * * *
-NEZHA_KEY=
+NEZHA_KEY=      //nezha密匙
 * * *
-ARGO_DOMAIN=  //固定域名  【未有可不填】
+ARGO_DOMAIN=  //隧道固定域名  【未有可不填】
 * * *
-ARGO_AUTH=    //固定token  【未有可不填】
+ARGO_AUTH=    //隧道固定token  【未有可不填】
 * * *
 WSPATH=argo  【默认值】
 * * *
 UUID=de04add9-5c68-8bab-950c-08cd5320df18【默认值】
 * * *
-ARGO_AUTH隧道的token值，具体看f佬的说明 ，脚本没有设置隧道json，只配置了toekn,只能填token
+ARGO_AUTH隧道的token值，具体请看f佬的说明 ，脚本没有设置隧道json，只配置了toekn,只能填token值
 * * *
-https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md
+说明链接：https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md
 * * *
