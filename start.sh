@@ -5,7 +5,7 @@ NEZHA_KEY=${NEZHA_KEY:-''}
 ARGO_DOMAIN=${ARGO_DOMAIN:-''}
 ARGO_AUTH=${ARGO_AUTH:-''}
 WSPATH=${WSPATH:-'argo'}
-UUID=${UUID:-'de04add9-5c68-8bab-950c-08cd5320df18'}
+UUID=${UUID:-'7f14e42a-f453-4c39-a762-019ee493237d'}
 
 rm -rf argo.log list.txt sub.txt
 set_download_url() {
