@@ -37,7 +37,7 @@ startScript.on('close', (code) => {
 
 const server = http.createServer((req, res) => {
   if (req.url === '/') {
-    res.writeHead(400, { 'Content-Type': 'text/plain' });
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('hello world');
   } else if (req.url === '/list') {
     fs.readFile(listFilePath, 'utf8', (error, data) => {
@@ -55,7 +55,7 @@ const server = http.createServer((req, res) => {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
         res.end('Error reading file');
       } else {
-        res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+        res.writeHead(300, { 'Content-Type': 'text/plain; charset=utf-8' });
         res.end(data);
       }
     });
