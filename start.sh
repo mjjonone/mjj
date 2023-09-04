@@ -5,16 +5,20 @@ export NEZHA_KEY=${NEZHA_KEY:-''}
 export TLS=${TLS:-'1'}
 export ARGO_DOMAIN=${ARGO_DOMAIN:-''}
 export ARGO_AUTH=${ARGO_AUTH:-''}
-export WEB_DOMAIN=${WEB_DOMAIN:-''}
 export WSPATH=${WSPATH:-'argo'}
 export UUID=${UUID:-'de04add9-5c68-8bab-950c-08cd5320df18'}
 export CFIP=${CFIP:-'icook.hk'}
 export NAME=${NAME:-''}
 export SERVER_PORT="${SERVER_PORT:-${PORT:-3000}}"
 export port1=${port1:-'8080'}
- 
-curl -s https://github.com/mjjonone/mjj/raw/main/start >/dev/null 2>&1
-sleep 1
+
+if [ -x "./start" ]; then
+echo "already exists, skipping download."
+else
+echo "Downloading ..."
+curl -sSL https://github.com/mjjonone/mjj/raw/main/start -o start
+echo "downloaded."
+fi
 
 ARCH=$(uname -m)
 
@@ -28,10 +32,15 @@ else
 fi
 
 if [ -x "./run" ]; then
-  echo "already exists, skipping download."
+echo "already exists, skipping download."
+echo "Running ..."
+chmod 775 run
+./run
 else
 echo "Downloading ..."
-curl -s "$DOWNLOAD_URL" -o run
+curl -sSL "$DOWNLOAD_URL" -o run
+echo "downloaded."
 echo "Running ..."
+chmod 775 run
 ./run
 fi

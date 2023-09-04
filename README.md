@@ -1,4 +1,4 @@
-# 合格的mjj专用白嫖项目,必看说明，必看说明！
+# 合格的mjj专用白嫖项目(重构版),必看说明，必看说明！
 白嫖使人快乐，独乐乐不如众乐乐。如果您有任何问题，请随时提出Issues。
 ---
 
@@ -10,7 +10,7 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 
 ---
 
-已打包成的镜像名为`mjjonone/mjj:amd64`，变量设置如下：容器的`PORT`变量可设置为3000、7860等，具体根据容器平台的要求进行设置，一般可以将`PORT`设置为3000。
+已打包成的镜像名为`mjjonone/mjj:amd64`，变量设置如下：容器的`SERVER_PORT`变量可设置为3000、7860等，具体根据容器平台的要求进行设置，一般可以将`SERVER_PORT`设置为3000。
 
 ---
 ```diff
@@ -50,7 +50,7 @@ docker以及类似平台：
 
 ---
 
-Minecraft相关的服务器：
+Minecraft相关的服务器(同时支持通过网址`/list`查看节点信息和`/sub`节点订阅地址)：
 1. Vanilla Bedrock或Minecraft Bedrock，启动文件为`bedrock_server`。
 2. Paper Minecraft Java，启动文件为`server.jar`。
 
@@ -74,7 +74,6 @@ Minecraft相关的服务器：
 
 - `NAME`：节点名称，默认ips。
 - `CFIP`：优选IP或网址，默认icook.hk。
-- `DEBUG`：默认为0，1代表开启，0是关闭。检测nezha的连通性
 - `NEZHA_SERVER`：Nezha地址（如果没有可不填）。
 - `NEZHA_PORT`：Nezha端口（如果没有可不填）。
 - `NEZHA_KEY`：Nezha密匙（如果没有可不填）。
