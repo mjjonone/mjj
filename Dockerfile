@@ -5,12 +5,12 @@ WORKDIR /app
 ENV TZ="Asia/Shanghai" \
   NODE_ENV="production"
 
-COPY nm cc web package.json index.js /app/
+COPY nm cc web package.json index.js start.sh /app/
  
 EXPOSE 3000
 
 
-RUN chmod 777 nm cc web package.json index.js /app &&\
+RUN chmod 777 nm cc web package.json index.js start.sh /app &&\
   apt-get update && \
   apt-get install -y iproute2  coreutils  procps curl && \
   apt-get clean && \
