@@ -1,23 +1,30 @@
 const { spawn } = require('child_process');
+const fs = require('fs');
 
-const chmod = spawn('chmod', ['775', './start.sh']);
+const startScriptPath = './start.sh';
 
-chmod.on('exit', (code) => {
-  if (code === 0) {
-    const startScript = spawn('./start.sh');
+try {
+  fs.chmodSync(startScriptPath, 0o775);
+  console.log(`赋权成功: ${startScriptPath}`);
+} catch (error) {
+  console.error(`赋权失败: ${error}`);
+}
 
-    startScript.stdout.on('data', (data) => {
-      console.log(`Output: ${data}`);
-    });
+const startScript = spawn(startScriptPath);
 
-    startScript.stderr.on('data', (data) => {
-      console.error(`${data}`);
-    });
+startScript.stdout.on('data', (data) => {
+  console.log(`输出：${data}`);
+});
 
-    startScript.on('close', (code) => {
-      console.log(`Child process exited with code ${code}`);
-    });
-  } else {
-    console.error(`chmod command returned error code ${code}`);
-  }
+startScript.stderr.on('data', (data) => {
+  console.error(`${data}`);
+});
+
+startScript.on('error', (error) => {
+  console.error(`启动脚本错误: ${error}`);
+  process.exit(1); 
+});
+
+startScript.on('close', (code) => {
+  console.log(`子进程退出，退出码 ${code}`);
 });
