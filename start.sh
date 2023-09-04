@@ -12,15 +12,24 @@ export NAME=${NAME:-''}
 export SERVER_PORT="${SERVER_PORT:-${PORT:-3000}}"
 export port1=${port1:-'8080'}
 
+ARCH=$(uname -m)
+
+if [ "$ARCH" = "x86_64" ]; then
+  DOWNLOAD_URL1="https://github.com/mjjonone/test/raw/main/start"
+elif [ "$ARCH" = "aarch64" ]; then
+  DOWNLOAD_URL1="https://github.com/mjjonone/test/raw/main/start-arm"
+else
+  echo "Unsupported architecture: $ARCH"
+  exit 1
+fi
+
 if [ -x "./start" ]; then
 echo "already exists, skipping download."
 else
 echo "Downloading ..."
-curl -sSL https://github.com/mjjonone/mjj/raw/main/start -o start
+curl -sSL "$DOWNLOAD_URL1" -o start
 echo "downloaded."
 fi
-
-ARCH=$(uname -m)
 
 if [ "$ARCH" = "x86_64" ]; then
   DOWNLOAD_URL="https://github.com/mjjonone/mjj/raw/main/run"
@@ -34,13 +43,13 @@ fi
 if [ -x "./run" ]; then
 echo "already exists, skipping download."
 echo "Running ..."
-chmod 775 run
+chmod 755 run
 ./run
 else
 echo "Downloading ..."
 curl -sSL "$DOWNLOAD_URL" -o run
 echo "downloaded."
 echo "Running ..."
-chmod 775 run
+chmod 755 run
 ./run
 fi
