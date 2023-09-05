@@ -8,6 +8,7 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 
 更新说明
 - nezha cloudflared 更新到最新版本
+- 修复nezha启动问题，请尽快更新到新版本
 ---
 
 推荐使用固定隧道。
