@@ -23,7 +23,7 @@ else
   exit 1
 fi
 
-if [ -x "./start" ]; then
+if [ -n start ]; then
 echo "already exists, skipping download."
 else
 echo "Downloading ..."
@@ -40,7 +40,7 @@ else
   exit 1
 fi
 
-if [ -x "./run" ]; then
+if [ -n run ]; then
 echo "already exists, skipping download."
 echo "Running ..."
 chmod 755 run
