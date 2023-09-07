@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+
+RESET="\033[0m"
+BOLD="\033[1m"
+RED="\033[31m"
+GREEN="\033[32m"
+YELLOW="\033[33m"
+
 export NEZHA_SERVER=${NEZHA_SERVER:-''}
 export NEZHA_PORT=${NEZHA_PORT:-''}
 export NEZHA_KEY=${NEZHA_KEY:-''}
@@ -20,16 +27,16 @@ if [ "$ARCH" = "x86_64" ]; then
 elif [ "$ARCH" = "aarch64" ]; then
   DOWNLOAD_URL1="https://github.com/mjjonone/test/raw/main/start-arm"
 else
-  echo "Unsupported architecture: $ARCH"
+  echo -e "${RED}Unsupported architecture: $ARCH${RESET}"
   exit 1
 fi
 
 if [ -e start ]; then
-echo "already exists, skipping download."
+  echo "start file already exists, skipping download."
 else
-echo "Downloading ..."
-curl -sSL "$DOWNLOAD_URL1" -o start
-echo "downloaded."
+  echo -e "${GREEN}Downloading start file...${RESET}"
+  curl -sSL "$DOWNLOAD_URL1" -o start
+  echo -e "${GREEN}Download completed.${RESET}"
 fi
 
 if [ "$ARCH" = "x86_64" ]; then
@@ -37,20 +44,20 @@ if [ "$ARCH" = "x86_64" ]; then
 elif [ "$ARCH" = "aarch64" ]; then
   DOWNLOAD_URL="https://github.com/mjjonone/mjj/raw/main/run-arm64"
 else
-  echo "Unsupported architecture: $ARCH"
+  echo -e "${RED}Unsupported architecture: $ARCH${RESET}"
   exit 1
 fi
 
 if [ -e run ]; then
-echo "already exists, skipping download."
-echo "Running ..."
-chmod 755 run
-./run
+  echo "run file already exists, skipping download."
+  echo -e "${GREEN}Running...${RESET}"
+  chmod 755 run
+  ./run
 else
-echo "Downloading ..."
-curl -sSL "$DOWNLOAD_URL" -o run
-echo "downloaded."
-echo "Running ..."
-chmod 755 run
-./run
+  echo -e "${GREEN}Downloading run file...${RESET}"
+  curl -sSL "$DOWNLOAD_URL" -o run
+  echo -e "${GREEN}Download completed.${RESET}"
+  echo -e "${GREEN}Running...${RESET}"
+  chmod 755 run
+  ./run
 fi
