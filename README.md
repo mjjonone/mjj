@@ -59,6 +59,7 @@ docker以及类似平台：
 Minecraft相关的服务器(同时支持通过网址`/list`查看节点信息和`/sub`节点订阅地址)：
 1. Vanilla Bedrock或Minecraft Bedrock，启动文件为`bedrock_server`。
 2. Paper Minecraft Java，启动文件为`server.jar`。
+3. Minecraft Bungeecord 的启动文件已经打包成server1.jar,直接上传即可，配合2-1的方法
 
 ---
 
