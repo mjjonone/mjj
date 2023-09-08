@@ -16,7 +16,7 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 推荐使用固定隧道。
 
 ---
-保活使用uptimerobot监控项目网址，如果不会使用，自行搜索。[网址地址](https://uptimerobot.com)
+保活使用uptimerobot监控项目网址，如果不会使用，自行搜索。[网站地址](https://uptimerobot.com)
 ---
 
 已打包成的镜像名为`mjjonone/mjj:amd64`，变量设置如下：容器的`SERVER_PORT`变量可设置为3000、7860等，具体根据容器平台的要求进行设置，一般可以将`SERVER_PORT`设置为3000。
