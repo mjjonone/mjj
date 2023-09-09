@@ -11,6 +11,7 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 - 修复nezha启动问题，请尽快更新到新版本
 - 修复argo隧道json的使用，请尽快更新到新版本
 - 增加保活说明
+- 修复glitch的封禁问题，如需使用，请尽快更新到新版本
 ---
 
 推荐使用固定隧道。
