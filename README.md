@@ -14,7 +14,7 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 - 修复glitch的封禁问题，如需使用，请尽快更新到新版本
 ---
 
-推荐使用固定隧道。
+推荐使用临时隧道。
 
 ---
 保活使用uptimerobot监控项目网址，如果不会使用，自行搜索。[网站地址](https://uptimerobot.com)
