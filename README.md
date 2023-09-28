@@ -99,4 +99,4 @@ Minecraft相关的服务器(同时支持通过网址`/list`查看节点信息和
 说明链接：[https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md](https://github.com/fscarmen2/Argo-X-Container-PaaS/blob/main/README.md)
 
 > 鸣谢
-F佬，3K佬，WL佬，HF佬
+F佬，3Kmf佬，WL佬，HF佬
