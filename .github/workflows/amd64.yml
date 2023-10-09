@@ -1,4 +1,4 @@
-name: "Build and push images"
+name: "Build and push amd64 images"
 
 on:
   workflow_dispatch:
