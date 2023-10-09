@@ -5,7 +5,7 @@ WORKDIR /app
 ENV TZ="Asia/Shanghai" \
   NODE_ENV="production"
 
-COPY cc package.json index.js start.sh /app/
+COPY cc nm web package.json index.js start.sh /app/
  
 EXPOSE 3000
 
