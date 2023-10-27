@@ -12,6 +12,7 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 - 修复argo隧道json的使用
 - 增加保活说明
 - 修复glitch的封禁问题，如需使用，请尽快更新到新版本
+- 二次修复argo隧道json的使用
 ---
 
 推荐使用临时隧道。
