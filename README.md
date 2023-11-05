@@ -14,6 +14,7 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 - 修复glitch的封禁问题，如需使用，请尽快更新到新版本
 - 二次修复argo隧道json的使用
 - 重大更新 cloudflared固定隧道token形式 在面板里需要设置为http://localhost:8081
+- 修复在alpine的运行错误
 ---
 
 推荐使用临时隧道。
