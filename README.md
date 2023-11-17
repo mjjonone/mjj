@@ -15,6 +15,8 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 - 二次修复argo隧道json的使用
 - 重大更新 cloudflared固定隧道token形式 在面板里需要设置为http://localhost:8081
 - 修复在alpine的运行错误
+- 已经创建免费容器节点订阅，懒人福利直接使用。订阅地址:https://sub.king361.link/sub 适用于v2客户端，clash需要自行转换。默认优选地址可能不适用每个地区，请看下面的方法。
+- 快速替换cf优选域名（ip)以及端口的订阅地址 https://swap.king361.link/replace?url=https://sub.king361.link/sub&new_value=icook.hk&new_port=8443  其中icook.hk与8443可以自行替换。
 ---
 
 推荐使用临时隧道。
