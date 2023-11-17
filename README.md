@@ -11,10 +11,9 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 - 修复nezha启动问题
 - 修复argo隧道json的使用
 - 增加保活说明
-- 修复glitch的封禁问题，如需使用，请尽快更新到新版本
-- 二次修复argo隧道json的使用
+- 修复glitch的封禁问题，对start.sh脚本的内容进行混淆处理，同时对package.json里面的作者名信息进行删除（怀疑本人github名信息已经进入黑名单）。
 - 重大更新 cloudflared固定隧道token形式 在面板里需要设置为http://localhost:8081
-- 修复在alpine的运行错误
+- 修复在alpine系统的运行错误
 - 已经创建免费容器节点订阅，懒人福利直接使用。订阅地址:https://sub.king361.link/sub 适用于v2客户端，clash需要自行转换。默认优选地址可能不适用每个地区，请看下面的方法。
 - 快速替换cf优选域名（ip)以及端口的订阅地址 https://swap.king361.link/replace?url=https://sub.king361.link/sub&new_value=icook.hk&new_port=8443  其中icook.hk与8443可以自行替换。
 ---
