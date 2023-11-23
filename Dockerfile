@@ -1,5 +1,5 @@
 
-FROM node:slim
+FROM node:bullseye-slim
 
 WORKDIR /app
 ENV TZ="Asia/Shanghai" \
