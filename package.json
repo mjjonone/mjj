@@ -12,6 +12,6 @@
   "dependencies": {  
   },
   "engines": {
-    "node": ">=17"
+    "node": ">=16.5.0"
   }
 }
