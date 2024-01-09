@@ -19,7 +19,8 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 - v2系列订阅地址:https://free.king361.cf/v2?ip=skk.moe&port=8443
 - clash订阅：https://free.king361.cf/clash?ip=skk.moe&port=8443 其中skk.moe与8443可以自行替换优选(or ip)以及端口。
 -  [在线订阅转换](https://sub.cfip.gay)。
--  可自定义的自带优选订阅：https://add.king361.cf/?uuid=d342d11e-d424-4583-b36e-524ab1f0afa4&host=edgood.king361.cf&path=?ed2048，下面是参数的定义，适合所有使用ws的cf cdn 节点
+-  可自定义的自带优选订阅：https://add.king361.cf/?uuid=d342d11e-d424-4583-b36e-524ab1f0afa4&host=edgood.king361.cf&path=?ed2048
+- 下面是参数的定义，适合所有使用ws的cf cdn 节点
 - host：您的伪装域名。
 - uuid：您的UUID。
 - path：您的服务的自定义路径。（不需要/)
