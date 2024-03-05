@@ -24,7 +24,7 @@ Documentation: [English version](https://github.com/mjjonone/mjj/blob/main/READM
 - host：您的伪装域名。
 - uuid：您的UUID。
 - path：您的服务的自定义路径。（不需要/)
-- 提供一个收集的订阅合集 base64编码的格式  https://allsub.king361.cf/
+- 提供一个收集的订阅合集 clash与singbox也可以直接订阅，不用转换  https://allsub.king361.cf/
 ---
 
 推荐使用临时隧道。
